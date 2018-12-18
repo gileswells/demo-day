@@ -21,19 +21,19 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" type="text" name="name" placeholder="Name" value="{{ old('name') }}" />
+                            <input class="form-control {{ ($errors->has('name')) ? 'is-invalid' : '' }}" type="text" name="name" placeholder="Name" value="{{ old('name') }}" />
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input class="form-control" type="text" name="email" placeholder="Email Address" value="{{ old('email') }}" />
+                            <input class="form-control {{ ($errors->has('email')) ? 'is-invalid' : '' }}" type="text" name="email" placeholder="Email Address" value="{{ old('email') }}" />
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input class="form-control" type="password" name="password" placeholder="Password" />
+                            <input class="form-control {{ ($errors->has('password')) ? 'is-invalid' : '' }}" type="password" name="password" placeholder="Password" />
                         </div>
                         <div class="form-group">
                             <label>Confirm Password</label>
-                            <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password" />
+                            <input class="form-control {{ ($errors->has('password_confirmation')) ? 'is-invalid' : '' }}" type="password" name="password_confirmation" placeholder="Confirm Password" />
                         </div>
 
                         <input class="btn btn-success" type="submit" value="Register" />
