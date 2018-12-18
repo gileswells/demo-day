@@ -13,12 +13,12 @@
                     @endif
                     <table class="table">
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
+                            <th>ID - <a href="{{ route('leads.index', ['sort' => 'id', 'dir' => 'asc']) }}">⬆️</a> <a href="{{ route('leads.index', ['sort' => 'id', 'dir' => 'desc']) }}">⬇️</a></th>
+                            <th>Name - <a href="{{ route('leads.index', ['sort' => 'name', 'dir' => 'asc']) }}">⬆️</a> <a href="{{ route('leads.index', ['sort' => 'name', 'dir' => 'desc']) }}">⬇️</a></th>
+                            <th>Email - <a href="{{ route('leads.index', ['sort' => 'email', 'dir' => 'asc']) }}">⬆️</a> <a href="{{ route('leads.index', ['sort' => 'email', 'dir' => 'desc']) }}">⬇️</a></th>
                             <th>Phone</th>
-                            <th>Postal Code</th>
-                            <th>Timestamp</th>
+                            <th>Postal Code - <a href="{{ route('leads.index', ['sort' => 'postal_code', 'dir' => 'asc']) }}">⬆️</a> <a href="{{ route('leads.index', ['sort' => 'postal_code', 'dir' => 'desc']) }}">⬇️</a></th>
+                            <th>Timestamp - <a href="{{ route('leads.index', ['sort' => 'created_at', 'dir' => 'asc']) }}">⬆️</a> <a href="{{ route('leads.index', ['sort' => 'created_at', 'dir' => 'desc']) }}">⬇️</a></th>
                             <th>Actions</th>
                         </tr>
                         @foreach ($leads as $lead)

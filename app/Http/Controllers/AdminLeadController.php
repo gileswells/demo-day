@@ -14,9 +14,14 @@ class AdminLeadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $leads = Lead::get();
+        $query = Lead::with('phone');
+        if ($request->has('sort')) {
+            $query->orderBy($request->input('sort'), $request->input('dir'));
+        }
+
+        $leads = $query->get();
 
         return view('admin.leads.index', compact('leads'));
     }
