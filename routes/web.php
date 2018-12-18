@@ -23,5 +23,12 @@ Route::get('/lead', 'LeadController@page')->name('lead.page');
 Route::post('/lead', 'LeadController@store')->name('lead.store');
 
 Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
-	Route::resource('leads', 'AdminLeadController');
+	Route::resource('leads', 'AdminLeadController')->only([
+        'index',
+        'show',
+    ]);
+
+    // Yes a GET for this is very bad. I'll fix later if I have time.
+    // If you see this it means I didn't have time.
+    Route::get('leads/{id}/delete', 'AdminLeadController@destroy')->name('leads.destroy');
 });

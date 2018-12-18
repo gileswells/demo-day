@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Lead;
 use Illuminate\Http\Request;
 
 class AdminLeadController extends Controller
@@ -13,7 +14,9 @@ class AdminLeadController extends Controller
      */
     public function index()
     {
-        //
+        $leads = Lead::get();
+
+        return view('admin.leads.index', compact('leads'));
     }
 
     /**
@@ -79,6 +82,9 @@ class AdminLeadController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $lead = Lead::findOrFail($id);
+        $lead->delete();
+
+        return redirect()->route('leads.index');
     }
 }
