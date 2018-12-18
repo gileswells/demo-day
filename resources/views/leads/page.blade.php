@@ -21,19 +21,19 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Name</label>
-                            <input class="form-control" type="text" name="name" placeholder="Name" />
+                            <input class="form-control" type="text" name="name" placeholder="Name" value="{{ old('name') }}" />
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input class="form-control" type="text" name="email" placeholder="Email Address" />
+                            <input class="form-control" type="text" name="email" placeholder="Email Address" value="{{ old('email') }}" />
                         </div>
                         <div class="form-group">
                             <label>Phone Number</label>
-                            <input class="form-control" type="text" name="phone" placeholder="Phone Number" />
+                            <input class="form-control" type="text" name="phone" placeholder="Phone Number" value="{{ old('phone') }}" />
                         </div>
                         <div class="form-group">
                             <label>Postal Code</label>
-                            <input class="form-control" type="text" name="postal_code" placeholder="Postal Code" />
+                            <input class="form-control" type="text" name="postal_code" placeholder="Postal Code" value="{{ old('postal_code') }}" />
                         </div>
 
                         <input class="btn btn-success" type="submit" value="Submit" />
