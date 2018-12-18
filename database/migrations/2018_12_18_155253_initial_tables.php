@@ -26,7 +26,6 @@ class InitialTables extends Migration
             $table->increments('id');
             $table->integer('lead_id')->unsigned();
             $table->string('phone');
-            $table->string('phone_raw');
 
             $table->timestamps();
 
@@ -41,7 +40,7 @@ class InitialTables extends Migration
      */
     public function down()
     {
-        Schema::destroy('lead_phones');
-        Schema::destroy('leads');
+        Schema::drop('lead_phones');
+        Schema::drop('leads');
     }
 }
