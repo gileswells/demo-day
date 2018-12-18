@@ -8,6 +8,9 @@
                 <div class="card-header">Login</div>
 
                 <div class="card-body">
+                    @if (request()->session()->has('unauthorized'))
+                        <p>You must login to view that page.</p>
+                    @endif
                     @if (request()->session()->has('registration-complete'))
                         <p>Registration Complete! Login below.</p>
                     @endif

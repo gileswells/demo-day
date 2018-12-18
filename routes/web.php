@@ -32,7 +32,7 @@ Route::group(['prefix' => '/session'], function () {
     Route::post('logout', 'SessionController@logout')->name('session.logout');
 });
 
-Route::group(['prefix' => '/admin'], function () {
+Route::group(['prefix' => '/admin', 'middleware' => 'custom-auth'], function () {
 	Route::resource('leads', 'AdminLeadController')->only([
         'index',
         'show',

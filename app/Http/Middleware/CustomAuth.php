@@ -15,6 +15,12 @@ class CustomAuth
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if ($request->session()->has('admin_id')) {
+            return $next($request);
+        }
+
+        $request->session()->flash('unauthorized');
+
+        return redirect()->route('session.login');
     }
 }
