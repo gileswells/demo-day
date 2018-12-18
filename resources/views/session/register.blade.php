@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">User Registration</div>
 
@@ -19,12 +19,24 @@
 
                     <form action="{{ route('session.store') }}" method="post">
                         {{ csrf_field() }}
-                        <input type="text" name="name" placeholder="Name" /><br />
-                        <input type="text" name="email" placeholder="Email Address" /><br />
-                        <input type="password" name="password" placeholder="Password" /><br />
-                        <input type="password" name="password_confirmation" placeholder="Confirm Password" /><br />
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" type="text" name="name" placeholder="Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input class="form-control" type="text" name="email" placeholder="Email Address" />
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password" placeholder="Password" />
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password" />
+                        </div>
 
-                        <input type="submit" value="Register" />
+                        <input class="btn btn-success" type="submit" value="Register" />
                     </form>
                 </div>
             </div>

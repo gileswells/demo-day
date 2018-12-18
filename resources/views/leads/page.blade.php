@@ -19,12 +19,24 @@
 
                     <form action="{{ route('lead.store') }}" method="post">
                         {{ csrf_field() }}
-                        <input type="text" name="name" placeholder="Name" /><br />
-                        <input type="text" name="email" placeholder="Email Address" /><br />
-                        <input type="text" name="phone" placeholder="Phone Number" /><br />
-                        <input type="text" name="postal_code" placeholder="Postal Code" /><br />
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input class="form-control" type="text" name="name" placeholder="Name" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input class="form-control" type="text" name="email" placeholder="Email Address" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input class="form-control" type="text" name="phone" placeholder="Phone Number" />
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input class="form-control" type="text" name="postal_code" placeholder="Postal Code" />
+                        </div>
 
-                        <input type="submit" value="Submit" />
+                        <input class="btn btn-success" type="submit" value="Submit" />
                     </form>
                 </div>
             </div>

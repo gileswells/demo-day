@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Login</div>
 
@@ -31,10 +31,16 @@
 
                     <form action="{{ route('session.authenticate') }}" method="post">
                         {{ csrf_field() }}
-                        <input type="text" name="email" placeholder="Email Address" /><br />
-                        <input type="password" name="password" placeholder="Password" /><br />
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input class="form-control" type="text" name="email" placeholder="Email Address" />
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password" placeholder="Password" />
+                        </div>
 
-                        <input type="submit" value="Login" />
+                        <input class="btn btn-success" type="submit" value="Login" />
                     </form>
                 </div>
             </div>
