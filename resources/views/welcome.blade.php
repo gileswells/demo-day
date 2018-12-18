@@ -91,7 +91,7 @@
                 <div class="links">
                     <a href="{{ route('lead.page') }}">Lead Form</a>
                     <a href="{{ route('leads.index') }}">Leads Listing</a>
-                    <a href="https://github.com/gileswells/demo-day">Project Repo</a>
+                    <a href="https://github.com/gileswells/demo-day" target="blank">Project Repo</a>
                 </div>
             </div>
         </div>
