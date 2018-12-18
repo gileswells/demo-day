@@ -5,3 +5,4 @@
 /.vagrant
 /*-cloudimg-console.log
 vendor
+.env
