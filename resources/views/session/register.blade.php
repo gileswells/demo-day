@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Lead Form</div>
+                <div class="card-header">User Registration</div>
 
                 <div class="card-body">
                     @if ($errors->any())
@@ -17,14 +17,14 @@
                         </ul>
                     @endif
 
-                    <form action="{{ route('lead.store') }}" method="post">
+                    <form action="{{ route('session.store') }}" method="post">
                         {{ csrf_field() }}
                         <input type="text" name="name" placeholder="Name" /><br />
                         <input type="text" name="email" placeholder="Email Address" /><br />
-                        <input type="text" name="phone" placeholder="Phone Number" /><br />
-                        <input type="text" name="postal_code" placeholder="Postal Code" /><br />
+                        <input type="password" name="password" placeholder="Password" /><br />
+                        <input type="password" name="password_confirmation" placeholder="Confirm Password" /><br />
 
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Register" />
                     </form>
                 </div>
             </div>

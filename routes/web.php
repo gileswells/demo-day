@@ -15,14 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/lead', 'LeadController@page')->name('lead.page');
 Route::post('/lead', 'LeadController@store')->name('lead.store');
 
-Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/session'], function () {
+    Route::get('register', 'SessionController@register')->name('session.register');
+    Route::post('register', 'SessionController@store')->name('session.store');
+
+    Route::get('login', 'SessionController@login')->name('session.login');
+    Route::post('authenticate', 'SessionController@authenticate')->name('session.authenticate');
+
+    Route::post('logout', 'SessionController@logout')->name('session.logout');
+});
+
+Route::group(['prefix' => '/admin'], function () {
 	Route::resource('leads', 'AdminLeadController')->only([
         'index',
         'show',

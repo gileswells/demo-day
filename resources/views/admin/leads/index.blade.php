@@ -8,6 +8,9 @@
                 <div class="card-header">Leads</div>
 
                 <div class="card-body">
+                    @if (request()->session()->has('login-success'))
+                        <p>Login Success!</p>
+                    @endif
                     <table class="table">
                         <tr>
                             <th>ID</th>

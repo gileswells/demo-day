@@ -5,9 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Lead Form</div>
+                <div class="card-header">Login</div>
 
                 <div class="card-body">
+                    @if (request()->session()->has('registration-complete'))
+                        <p>Registration Complete! Login below.</p>
+                    @endif
+                    @if (request()->session()->has('login-failure'))
+                        <p>The email/password you provided does not match.</p>
+                    @endif
+                    @if (request()->session()->has('logout-success'))
+                        <p>You have been logged out.</p>
+                    @endif
                     @if ($errors->any())
                         <p>There were error(s) with your form submission:</p>
                         <ul>
@@ -17,14 +26,12 @@
                         </ul>
                     @endif
 
-                    <form action="{{ route('lead.store') }}" method="post">
+                    <form action="{{ route('session.authenticate') }}" method="post">
                         {{ csrf_field() }}
-                        <input type="text" name="name" placeholder="Name" /><br />
                         <input type="text" name="email" placeholder="Email Address" /><br />
-                        <input type="text" name="phone" placeholder="Phone Number" /><br />
-                        <input type="text" name="postal_code" placeholder="Postal Code" /><br />
+                        <input type="password" name="password" placeholder="Password" /><br />
 
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Login" />
                     </form>
                 </div>
             </div>
