@@ -34,7 +34,6 @@ Route::group(['prefix' => '/admin', 'middleware' => 'custom-auth'], function () 
         'show',
     ]);
 
-    // Yes a GET for this is very bad. I'll fix later if I have time.
-    // If you see this it means I didn't have time.
+    Route::post('leads/{id}', 'AdminLeadController@update')->name('leads.update');
     Route::get('leads/{id}/delete', 'AdminLeadController@destroy')->name('leads.destroy');
 });

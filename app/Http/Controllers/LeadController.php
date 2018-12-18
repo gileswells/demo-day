@@ -23,15 +23,15 @@ class LeadController extends Controller
             'postal_code' => 'required|min:5|max:15',
         ]);
 
-        DB::transaction(function () use ($request) {
+        DB::transaction(function () use ($validatedData) {
             $lead = Lead::create([
-                'name' => $request->input('name'),
-                'email' => $request->input('email'),
-                'postal_code' => $request->input('postal_code'),
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'postal_code' => $validatedData['postal_code'],
             ]);
 
             $lead->phone()->create([
-                'phone' => $request->input('phone'),
+                'phone' => $validatedData['phone'],
             ]);
         });
 

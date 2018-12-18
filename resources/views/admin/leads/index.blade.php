@@ -30,7 +30,7 @@
                                 <td>{{ $lead->postal_code }}</td>
                                 <td>{{ $lead->created_at }}</td>
                                 <td>
-                                    {{-- <a href="{{ route('leads.show', ['id' => $lead->id]) }}" class="btn btn-success">View</a>  --}}<a href="{{ route('leads.destroy', ['id' => $lead->id]) }}" class="btn btn-sm btn-danger" onclick="confirm('Are you sure you want to delete this lead?');">Delete</a>
+                                    <a href="{{ route('leads.show', ['id' => $lead->id]) }}" class="btn btn-sm btn-success">View</a> <a href="{{ route('leads.destroy', ['id' => $lead->id]) }}" class="btn btn-sm btn-danger" onclick="confirm('Are you sure you want to delete this lead?');">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
