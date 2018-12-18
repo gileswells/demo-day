@@ -84,6 +84,10 @@
                     Demo Day
                 </div>
 
+                @if (request()->session()->has('logout-success'))
+                    <h3>You have been logged out.</h3>
+                @endif
+
                 <div class="links">
                     <a href="{{ route('lead.page') }}">Lead Form</a>
                     <a href="{{ route('leads.index') }}">Leads Listing</a>

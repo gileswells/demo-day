@@ -17,9 +17,6 @@
                     @if (request()->session()->has('login-failure'))
                         <p>The email/password you provided does not match.</p>
                     @endif
-                    @if (request()->session()->has('logout-success'))
-                        <p>You have been logged out.</p>
-                    @endif
                     @if ($errors->any())
                         <p>There were error(s) with your form submission:</p>
                         <ul>

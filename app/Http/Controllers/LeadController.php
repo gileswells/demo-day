@@ -18,7 +18,7 @@ class LeadController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|max:255',
+            'email' => 'required|email|max:255',
             'phone' => 'required|min:10',
             'postal_code' => 'required|min:5|max:15',
         ]);

@@ -59,6 +59,6 @@ class SessionController extends Controller
         $request->session()->forget('admin_id');
         $request->session()->flash('logout-success', true);
 
-        return redirect()->route('session.login');
+        return redirect()->route('welcome');
     }
 }
