@@ -24,9 +24,9 @@
                         @foreach ($leads as $lead)
                             <tr>
                                 <td>{{ $lead->id }}</td>
-                                <td>{{ $lead->name }}</td>
-                                <td>{{ $lead->email }}</td>
-                                <td>{{ $lead->phone->phone }}</td>
+                                <td><a href="{{ route('leads.show', ['id' => $lead->id]) }}">{{ $lead->name }}</a></td>
+                                <td><a href="mailto:{{ $lead->email }}">{{ $lead->email }}</a></td>
+                                <td><a href="tel:{{ $lead->phone->phone }}">{{ $lead->phone->phone }}</a></td>
                                 <td>{{ $lead->postal_code }}</td>
                                 <td>{{ $lead->created_at }}</td>
                                 <td>
