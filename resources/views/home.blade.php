@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a class="btn btn-success" href="{{ route('leads.index') }}">Leads dashboard</a>
                 </div>
             </div>
         </div>

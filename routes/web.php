@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/lead', 'LeadController@page')->name('lead.page');
+Route::post('/lead', 'LeadController@store')->name('lead.store');
+
+Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
+	Route::resource('leads', 'AdminLeadController');
+});

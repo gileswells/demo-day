@@ -12,6 +12,9 @@ class Lead extends Model
     	'email',
     	'postal_code',
     ];
+    protected $with = [
+        'phone',
+    ];
 
     public function phone()
     {

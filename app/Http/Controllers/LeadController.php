@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Lead;
 use App\LeadPhone;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LeadController extends Controller
 {
     public function page()
-    {
-        return view('lead.page');
+    {        
+        return view('leads.page');
     }
 
     public function store(Request $request)
@@ -22,7 +23,7 @@ class LeadController extends Controller
             'postal_code' => 'required|min:5|max:15',
         ]);
 
-        DB::transaction(function () {
+        DB::transaction(function () use ($request) {
             $lead = Lead::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
@@ -33,5 +34,7 @@ class LeadController extends Controller
                 'phone' => $request->input('phone'),
             ]);
         });
+
+        return view('leads.success');
     }
 }
